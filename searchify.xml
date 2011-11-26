@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.7.0" method="upgrade">
+
+    <name>Searchify</name>
+    <creationDate>October 2011</creationDate>
+    <author>Amsayk</author>
+    <authorEmail>cisse.amadou.9@gmail.com</authorEmail>
+    <version>0.1.0</version>
+    <description>Advanced ajax-based articles search for Joomla</description>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>searchify.php</filename>
+        <filename>controller.php</filename>
+        <folder>controllers</folder>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>assets/css</folder>
+        <folder>assets/javascript</folder>
+    </files>
+
+    <administration>
+        <menu>Searchify</menu>
+        <files folder="admin">
+            <filename>index.html</filename>
+            <filename>searchify.php</filename>
+        </files>
+    </administration>
+
+</extension>

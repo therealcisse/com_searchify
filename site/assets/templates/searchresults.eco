@@ -1,0 +1,27 @@
+<% print_article = (article, counter) => %>
+  <li class="article">
+    <div class="wrapper">
+      <h3><%= counter++ %>. <a href="<%= @article_href article.id, article.alias, article.category_id, article.category_alias %>"><%= article.title %></a>
+      </h3>
+      <p>created by <strong style="font-weight:bold;"><%= article.username %></strong>
+      <span class="date" data-date="<%= article.created %>" title="<%= article.created %>"><%= jQuery.relativeDate Date.parse(article.created) %></span></p>
+    </div>
+  </li>
+<% end %>
+<% print_category = (category, counter) => %>
+  <ul class="category">
+    <%= counter++ %>. <a href="<%= @category_href category.id, category.alias  %>"><%= category.title %></a>
+    <% acounter=1 %>
+    <% for article in category.articles: %>
+      <%= print_article article, acounter++ %>
+    <% end %>
+  </ul>
+<% end %>
+<% if @categories.length: %>
+  <% ccounter=1 %>
+  <% for category in @categories: %>
+    <%= print_category category, ccounter++ %>
+  <% end %>
+<% else: %>
+  <div class="center">No articles</div>
+<% end %>
